@@ -31,4 +31,9 @@
 
     </LinearLayout>
 
+    <include
+        android:id="@+id/vgLoading"
+        layout="@layout/layout_loading"
+        android:visibility="gone" />
+
 </FrameLayout>
