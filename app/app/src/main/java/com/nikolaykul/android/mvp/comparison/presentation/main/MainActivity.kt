@@ -28,9 +28,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * You probably would use a `DataBinding` or a `ButterKnife` or `Kotlin Android Extensions` for that
-     */
+    // You probably would use a `DataBinding` or a `ButterKnife` or `Kotlin Android Extensions` for that
     private fun initViews() {
         btnLogin = findViewById(R.id.btnLogin)
         etUsername = findViewById(R.id.etUsername)
