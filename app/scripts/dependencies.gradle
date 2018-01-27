@@ -11,6 +11,4 @@ ext {
     version_kotlin = '1.2.21'
     version_support = '27.0.2'
 
-    version_constraint_layout = '1.0.2'
-
 }
