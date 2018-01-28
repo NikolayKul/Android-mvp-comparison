@@ -12,6 +12,7 @@ import com.nikolaykul.android.mvp.comparison.presentation.base.BaseActivity
 import com.nikolaykul.android.mvp.comparison.utils.hideKeyboard
 import com.nikolaykul.android.mvp.comparison.utils.textString
 import jp.wasabeef.blurry.Blurry
+import javax.inject.Inject
 
 /**
  * Created by nikolay
@@ -19,6 +20,12 @@ import jp.wasabeef.blurry.Blurry
 
 class MainActivity : BaseActivity<MainPresenter>(), MainMvpView {
 
+    // Otherwise you should explicitly define `Presenter`'s getter
+    // in `ApplicationComponent` or `ActivityComponent` (depending on its scope)
+    // and call it in `createPresenter`
+    @Inject lateinit var injectedPresenter: MainPresenter
+
+    // You probably would use a `DataBinding` or a `ButterKnife` or `Kotlin Android Extensions` for that
     private lateinit var btnLogin: Button
     private lateinit var etUsername: EditText
     private lateinit var etPassword: EditText
@@ -32,7 +39,7 @@ class MainActivity : BaseActivity<MainPresenter>(), MainMvpView {
         presenter.attachView(this)
     }
 
-    override fun createPresenter(): MainPresenter = MainPresenter()
+    override fun createPresenter(): MainPresenter = injectedPresenter
 
     override fun injectSelf(component: ActivityComponent) {
         component.inject(this)
@@ -66,7 +73,6 @@ class MainActivity : BaseActivity<MainPresenter>(), MainMvpView {
         }
     }
 
-    // You probably would use a `DataBinding` or a `ButterKnife` or `Kotlin Android Extensions` for that
     private fun initViews() {
         btnLogin = findViewById(R.id.btnLogin)
         etUsername = findViewById(R.id.etUsername)
