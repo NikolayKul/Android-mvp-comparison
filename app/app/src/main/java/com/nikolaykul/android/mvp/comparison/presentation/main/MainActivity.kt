@@ -1,13 +1,14 @@
 package com.nikolaykul.android.mvp.comparison.presentation.main
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.nikolaykul.android.mvp.comparison.R
+import com.nikolaykul.android.mvp.comparison.di.ActivityComponent
+import com.nikolaykul.android.mvp.comparison.presentation.base.BaseActivity
 import com.nikolaykul.android.mvp.comparison.utils.hideKeyboard
 import com.nikolaykul.android.mvp.comparison.utils.textString
 import jp.wasabeef.blurry.Blurry
@@ -18,7 +19,7 @@ import jp.wasabeef.blurry.Blurry
 
 private const val LOADING_MILLIS = 500L
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private lateinit var btnLogin: Button
     private lateinit var etUsername: EditText
@@ -30,6 +31,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         initViews()
         initListeners()
+    }
+
+    override fun injectSelf(component: ActivityComponent) {
+        component.inject(this)
     }
 
     private fun showCredentials() {
