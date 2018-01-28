@@ -19,7 +19,7 @@ import jp.wasabeef.blurry.Blurry
 
 private const val LOADING_MILLIS = 500L
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity(), MainMvpView {
 
     private lateinit var btnLogin: Button
     private lateinit var etUsername: EditText
@@ -37,18 +37,18 @@ class MainActivity : BaseActivity() {
         component.inject(this)
     }
 
-    private fun showCredentials() {
-        val msg = "Username: ${etUsername.textString()}, password: ${etPassword.textString()}"
+    override fun showCredentials(username: String, password: String) {
+        val msg = "Username: $username, password: $password"
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 
-    private fun showLoading() {
+    override fun showLoading() {
         hideKeyboard(this)
         applyBlur()
         vgLoading.visibility = View.VISIBLE
     }
 
-    private fun hideLoading() {
+    override fun hideLoading() {
         vgLoading.visibility = View.GONE
     }
 
@@ -64,7 +64,7 @@ class MainActivity : BaseActivity() {
             showLoading()
             vgLoading.postDelayed({
                 hideLoading()
-                showCredentials()
+                showCredentials(etUsername.textString(), etPassword.textString())
             }, LOADING_MILLIS)
         }
     }
