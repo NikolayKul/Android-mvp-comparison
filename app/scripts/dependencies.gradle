@@ -9,7 +9,9 @@ ext {
 
     version_gradle = '3.0.1'
     version_kotlin = '1.2.21'
-    version_support = '27.0.2'
 
+    version_support = '27.0.2'
     version_blurry = '2.1.1'
+    version_dagger = '2.13'
+
 }
