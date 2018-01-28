@@ -10,13 +10,12 @@ import com.nikolaykul.android.mvp.comparison.di.ComponentManager
  */
 
 abstract class BaseActivity<TPresenter : BasePresenter<*>> : AppCompatActivity() {
-    protected lateinit var activityComponent: ActivityComponent
     protected lateinit var presenter: TPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        activityComponent = ComponentManager.createActivityComponent()
-                .also { injectSelf(it) }
+        ComponentManager.createActivityComponent()
+                .let { injectSelf(it) }
         presenter = createPresenter()
     }
 
