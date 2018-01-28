@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.nikolaykul.android.mvp.comparison.R
+import com.nikolaykul.android.mvp.comparison.utils.hideKeyboard
 import com.nikolaykul.android.mvp.comparison.utils.textString
 import jp.wasabeef.blurry.Blurry
 
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showLoading() {
+        hideKeyboard(this)
         applyBlur()
         vgLoading.visibility = View.VISIBLE
     }
