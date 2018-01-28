@@ -19,7 +19,7 @@ import jp.wasabeef.blurry.Blurry
 
 private const val LOADING_MILLIS = 500L
 
-class MainActivity : BaseActivity(), MainMvpView {
+class MainActivity : BaseActivity<MainPresenter>(), MainMvpView {
 
     private lateinit var btnLogin: Button
     private lateinit var etUsername: EditText
@@ -31,7 +31,10 @@ class MainActivity : BaseActivity(), MainMvpView {
         setContentView(R.layout.activity_main)
         initViews()
         initListeners()
+        presenter.attachView(this)
     }
+
+    override fun createPresenter(): MainPresenter = MainPresenter()
 
     override fun injectSelf(component: ActivityComponent) {
         component.inject(this)

@@ -9,13 +9,23 @@ import com.nikolaykul.android.mvp.comparison.di.ComponentManager
  * Created by nikolay
  */
 
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity<TPresenter : BasePresenter<*>> : AppCompatActivity() {
+    protected lateinit var activityComponent: ActivityComponent
+    protected lateinit var presenter: TPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ComponentManager.createActivityComponent()
-                .let { injectSelf(it) }
+        activityComponent = ComponentManager.createActivityComponent()
+                .also { injectSelf(it) }
+        presenter = createPresenter()
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.detachView()
+    }
+
+    protected abstract fun createPresenter(): TPresenter
 
     protected abstract fun injectSelf(component: ActivityComponent)
 
