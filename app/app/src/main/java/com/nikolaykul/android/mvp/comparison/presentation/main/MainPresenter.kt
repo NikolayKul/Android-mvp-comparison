@@ -1,7 +1,7 @@
 package com.nikolaykul.android.mvp.comparison.presentation.main
 
-import com.nikolaykul.android.mvp.comparison.domain.Credentials
-import com.nikolaykul.android.mvp.comparison.domain.MainInteractor
+import com.nikolaykul.android.mvp.comparison.domain.main.Credentials
+import com.nikolaykul.android.mvp.comparison.domain.main.MainInteractor
 import com.nikolaykul.android.mvp.comparison.presentation.base.BasePresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import javax.inject.Inject

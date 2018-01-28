@@ -1,4 +1,4 @@
-package com.nikolaykul.android.mvp.comparison.domain
+package com.nikolaykul.android.mvp.comparison.domain.main
 
 /**
  * Created by nikolay
