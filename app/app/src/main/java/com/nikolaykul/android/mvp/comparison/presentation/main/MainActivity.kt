@@ -20,8 +20,8 @@ import javax.inject.Inject
 
 class MainActivity : BaseActivity<MainPresenter>(), MainMvpView {
 
-    // Otherwise you should explicitly define `Presenter`'s getter
-    // in `ApplicationComponent` or `ActivityComponent` (depending on its scope)
+    // Otherwise you should explicitly define `MainPresenter`'s getter
+    // in `ApplicationComponent` or `ActivityComponent` (depending on presenter's scope)
     // and call it in `createPresenter`
     @Inject lateinit var injectedPresenter: MainPresenter
 
