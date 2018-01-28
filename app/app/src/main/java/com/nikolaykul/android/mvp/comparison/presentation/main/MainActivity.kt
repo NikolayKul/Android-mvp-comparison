@@ -8,7 +8,12 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.nikolaykul.android.mvp.comparison.R
+import com.nikolaykul.android.mvp.comparison.utils.textString
 import jp.wasabeef.blurry.Blurry
+
+/**
+ * Created by nikolay
+ */
 
 private const val LOADING_MILLIS = 500L
 
@@ -27,9 +32,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showCredentials() {
-        val username = etUsername.text.toString()
-        val password = etPassword.text.toString()
-        val msg = "Username: $username, password: $password"
+        val msg = "Username: ${etUsername.textString()}, password: ${etPassword.textString()}"
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 
