@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.nikolaykul.android.mvp.comparison.R
+import jp.wasabeef.blurry.Blurry
 
 private const val LOADING_MILLIS = 500L
 
@@ -25,19 +26,35 @@ class MainActivity : AppCompatActivity() {
         initListeners()
     }
 
-    private fun showCredentials(username: String, password: String) {
+    private fun showCredentials() {
+        val username = etUsername.text.toString()
+        val password = etPassword.text.toString()
         val msg = "Username: $username, password: $password"
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 
+    private fun showLoading() {
+        applyBlur()
+        vgLoading.visibility = View.VISIBLE
+    }
+
+    private fun hideLoading() {
+        vgLoading.visibility = View.GONE
+    }
+
+    private fun applyBlur() {
+        Blurry.with(this)
+                .sampling(2)
+                .capture(findViewById(R.id.root))
+                .into(findViewById(R.id.ivLoadingBackground))
+    }
+
     private fun initListeners() {
         btnLogin.setOnClickListener {
-            vgLoading.visibility = View.VISIBLE
+            showLoading()
             vgLoading.postDelayed({
-                vgLoading.visibility = View.GONE
-                val username = etUsername.text.toString()
-                val password = etPassword.text.toString()
-                showCredentials(username, password)
+                hideLoading()
+                showCredentials()
             }, LOADING_MILLIS)
         }
     }
