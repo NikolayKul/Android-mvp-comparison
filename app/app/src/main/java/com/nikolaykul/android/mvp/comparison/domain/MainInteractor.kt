@@ -15,9 +15,16 @@ private const val LOADING_MILLIS = 1000L
 @Reusable
 class MainInteractor @Inject constructor() {
 
-    fun login(credentials: Credentials): Completable = Completable.complete()
-            .doOnComplete { print("Performing heavy task: $credentials") }
+    fun login(credentials: Credentials): Completable = performLogin(credentials)
             .delay(LOADING_MILLIS, TimeUnit.MILLISECONDS)
             .subscribeOn(Schedulers.computation())
+
+    private fun performLogin(credentials: Credentials): Completable = Completable.defer {
+        if (credentials.isValid()) {
+            Completable.complete()
+        } else {
+            Completable.error(WrongCredentialsError())
+        }
+    }
 
 }
