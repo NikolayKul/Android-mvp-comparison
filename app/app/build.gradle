@@ -24,6 +24,10 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$project.version_support"
     implementation "jp.wasabeef:blurry:$project.version_blurry"
 
+    // rx
+    implementation "io.reactivex.rxjava2:rxjava:$project.version_rx_java"
+    implementation "io.reactivex.rxjava2:rxandroid:$project.version_rx_android"
+
     // dagger
     implementation "com.google.dagger:dagger:$project.version_dagger"
     kapt "com.google.dagger:dagger-compiler:$project.version_dagger"
