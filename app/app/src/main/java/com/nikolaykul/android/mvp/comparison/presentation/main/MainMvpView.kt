@@ -9,5 +9,6 @@ import com.nikolaykul.android.mvp.comparison.presentation.base.BaseMvpView
 interface MainMvpView : BaseMvpView {
     fun showLoading()
     fun hideLoading()
-    fun showCredentials(username: String, password: String)
+    fun showLoginSuccess()
+    fun showLoginError()
 }

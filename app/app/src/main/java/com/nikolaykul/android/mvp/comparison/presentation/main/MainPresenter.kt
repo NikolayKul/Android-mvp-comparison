@@ -20,8 +20,8 @@ class MainPresenter @Inject constructor(
                 .doOnSubscribe { view?.showLoading() }
                 .doOnTerminate { view?.hideLoading() }
                 .subscribe(
-                        { view?.showCredentials(username, password) },
-                        { print(it) })
+                        { view?.showLoginSuccess() },
+                        { view?.showLoginError() })
     }
 
 }

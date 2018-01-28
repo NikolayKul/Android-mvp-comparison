@@ -45,11 +45,6 @@ class MainActivity : BaseActivity<MainPresenter>(), MainMvpView {
         component.inject(this)
     }
 
-    override fun showCredentials(username: String, password: String) {
-        val msg = "Username: $username, password: $password"
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
-    }
-
     override fun showLoading() {
         hideKeyboard(this)
         applyBlur()
@@ -58,6 +53,14 @@ class MainActivity : BaseActivity<MainPresenter>(), MainMvpView {
 
     override fun hideLoading() {
         vgLoading.visibility = View.GONE
+    }
+
+    override fun showLoginSuccess() {
+        showMessage("Login success")
+    }
+
+    override fun showLoginError() {
+        showMessage("Error!")
     }
 
     private fun applyBlur() {
@@ -78,6 +81,10 @@ class MainActivity : BaseActivity<MainPresenter>(), MainMvpView {
         etUsername = findViewById(R.id.etUsername)
         etPassword = findViewById(R.id.etPassword)
         vgLoading = findViewById(R.id.vgLoading)
+    }
+
+    private fun showMessage(msg: String) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 
 }
