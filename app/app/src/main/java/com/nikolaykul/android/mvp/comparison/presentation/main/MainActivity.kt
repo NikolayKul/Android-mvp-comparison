@@ -17,8 +17,6 @@ import jp.wasabeef.blurry.Blurry
  * Created by nikolay
  */
 
-private const val LOADING_MILLIS = 500L
-
 class MainActivity : BaseActivity<MainPresenter>(), MainMvpView {
 
     private lateinit var btnLogin: Button
@@ -64,11 +62,7 @@ class MainActivity : BaseActivity<MainPresenter>(), MainMvpView {
 
     private fun initListeners() {
         btnLogin.setOnClickListener {
-            showLoading()
-            vgLoading.postDelayed({
-                hideLoading()
-                showCredentials(etUsername.textString(), etPassword.textString())
-            }, LOADING_MILLIS)
+            presenter.login(etUsername.textString(), etPassword.textString())
         }
     }
 
