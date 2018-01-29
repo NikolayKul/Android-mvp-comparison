@@ -9,6 +9,7 @@ ext {
 
     version_gradle = '3.0.1'
     version_kotlin = '1.2.21'
+    version_easy_mvp = '1.2.0-beta10'
 
     version_rx_java = '2.1.7'
     version_rx_android = '2.0.1'
