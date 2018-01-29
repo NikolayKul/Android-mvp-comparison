@@ -11,6 +11,8 @@ import com.nikolaykul.android.mvp.comparison.di.ActivityComponent
 import com.nikolaykul.android.mvp.comparison.presentation.base.BaseActivity
 import com.nikolaykul.android.mvp.comparison.utils.hideKeyboard
 import com.nikolaykul.android.mvp.comparison.utils.textString
+import easymvp.annotation.ActivityView
+import easymvp.annotation.Presenter
 import jp.wasabeef.blurry.Blurry
 import javax.inject.Inject
 
@@ -18,12 +20,12 @@ import javax.inject.Inject
  * Created by nikolay
  */
 
-class MainActivity : BaseActivity<MainPresenter>(), MainMvpView {
+@ActivityView(presenter = MainPresenter::class)
+class MainActivity : BaseActivity(), MainMvpView {
 
-    // Otherwise you should explicitly define `MainPresenter`'s getter
-    // in `ApplicationComponent` or `ActivityComponent` (depending on presenter's scope)
-    // and call it in `createPresenter`
-    @Inject lateinit var injectedPresenter: MainPresenter
+    @Inject
+    @Presenter
+    lateinit var presenter: MainPresenter
 
     // You probably would use a `DataBinding` or a `ButterKnife` or `Kotlin Android Extensions` for that
     private lateinit var btnLogin: Button
@@ -36,10 +38,7 @@ class MainActivity : BaseActivity<MainPresenter>(), MainMvpView {
         setContentView(R.layout.activity_main)
         initViews()
         initListeners()
-        presenter.attachView(this)
     }
-
-    override fun createPresenter(): MainPresenter = injectedPresenter
 
     override fun injectSelf(component: ActivityComponent) {
         component.inject(this)

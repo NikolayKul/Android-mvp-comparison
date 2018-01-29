@@ -9,21 +9,16 @@ import com.nikolaykul.android.mvp.comparison.di.ComponentManager
  * Created by nikolay
  */
 
-abstract class BaseActivity<out TPresenter : BasePresenter<*>> : AppCompatActivity() {
-    protected val presenter: TPresenter by lazy { createPresenter() }
+abstract class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+
+        // inject BEFORE calling `super#onCreate`
         ComponentManager.createActivityComponent()
                 .let { injectSelf(it) }
-    }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        presenter.detachView()
+        super.onCreate(savedInstanceState)
     }
-
-    protected abstract fun createPresenter(): TPresenter
 
     protected abstract fun injectSelf(component: ActivityComponent)
 
