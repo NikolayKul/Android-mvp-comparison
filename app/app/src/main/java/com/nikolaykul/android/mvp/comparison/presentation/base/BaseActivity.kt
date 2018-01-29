@@ -9,14 +9,13 @@ import com.nikolaykul.android.mvp.comparison.di.ComponentManager
  * Created by nikolay
  */
 
-abstract class BaseActivity<TPresenter : BasePresenter<*>> : AppCompatActivity() {
-    protected lateinit var presenter: TPresenter
+abstract class BaseActivity<out TPresenter : BasePresenter<*>> : AppCompatActivity() {
+    protected val presenter: TPresenter by lazy { createPresenter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ComponentManager.createActivityComponent()
                 .let { injectSelf(it) }
-        presenter = createPresenter()
     }
 
     override fun onDestroy() {
