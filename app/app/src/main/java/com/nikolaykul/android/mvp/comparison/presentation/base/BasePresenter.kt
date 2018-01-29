@@ -7,11 +7,11 @@ package com.nikolaykul.android.mvp.comparison.presentation.base
 abstract class BasePresenter<TView : BaseMvpView> {
     protected var view: TView? = null
 
-    fun attachView(view: TView) {
+    open fun attachView(view: TView) {
         this.view = view
     }
 
-    fun detachView() {
+    open fun detachView() {
         view = null
     }
 
