@@ -5,6 +5,13 @@ This repo is aimed to help you to choose the right one by __looking at code__.<b
 
 >TODO: more description
 
+To cut it short:
+
+| Library | Support screen rotation | Dagger friendly | Easy to customize |
+| :-----: | :---------------------: | :-------------: | :---------------: |
+| EasyMvp | no                      | yes             | yes               |
+| Moxy    | yes                     | somewhat        | yes               |
+
 >TODO: info about **branches**
 
 ## Project
