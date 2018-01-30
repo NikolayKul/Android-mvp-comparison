@@ -24,7 +24,7 @@ Application consists of a single screen:
 
 >TODO: project screenshots
 
-## Frameworks and libraries
+## Libraries
 
 Every branch represents a single library
 
