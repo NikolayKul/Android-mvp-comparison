@@ -9,9 +9,12 @@ This repo is aimed to help you to choose the right one by __looking at code__.<b
 
 ## Project
 
->TODO: project screenshots
+Application consists of a single screen:
+- A couple of views
+- A loading progress bar
+- Error and success messages
 
->TODO: project description
+>TODO: project screenshots
 
 ## Frameworks and libraries
 
