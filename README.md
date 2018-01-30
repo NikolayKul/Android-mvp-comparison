@@ -1,7 +1,7 @@
 # Android MVP comparison
 
 In the world of Android there're a lot of different MVP frameworks and libraries.  
-This repo is aimed to help you to choose the right one by __looking at code__.<br/>
+This repo is aimed to help you to choose the right one by __looking at code__.
 
 What do we expect from a perfect MVP library? Here're the most common __requirements__:
 - It must handle screen rotations by itself
