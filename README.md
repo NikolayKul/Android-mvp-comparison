@@ -1,9 +1,9 @@
 # Android MVP comparison
 
-In the world of Android there're a lot of different MVP frameworks and libraries.<br/>
+In the world of Android there're a lot of different MVP frameworks and libraries.  
 This repo is aimed to help you to choose the right one by __looking at code__.<br/>
 
-What do we expect from a perfect MVP library? I've identified the most common __requirements__:
+What do we expect from a perfect MVP library? Here're the most common __requirements__:
 - It must handle screen rotations by itself
 - It must be easy to setup with a DI library (especially Dagger)
 - It must have a flexible API
@@ -15,9 +15,7 @@ So... to cut it short:
 | EasyMvp | no                       | yes             | yes               |
 | Moxy    | yes                      | somewhat        | yes               |
 
->TODO: info about **branches**
-
-## Project
+## Application
 
 Application consists of a single screen:
 - A couple of views
@@ -27,6 +25,8 @@ Application consists of a single screen:
 >TODO: project screenshots
 
 ## Frameworks and libraries
+
+Every branch represents a single library
 
 >TODO: Mosby
 
