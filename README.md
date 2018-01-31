@@ -14,6 +14,7 @@ So... to cut it short:
 | :-----: | :----------------------: | :-------------: | :---------------: |
 | EasyMvp | no                       | yes             | yes               |
 | Moxy    | yes                      | somewhat        | yes               |
+| Mosby   | somewhat                 | yes             | no                |
 
 ## Application
 
