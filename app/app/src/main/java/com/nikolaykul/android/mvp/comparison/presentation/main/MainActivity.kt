@@ -39,7 +39,6 @@ class MainActivity : BaseActivity(), MainMvpView {
         setContentView(R.layout.activity_main)
         initViews()
         initListeners()
-        presenter.attachView(this)
     }
 
     @ProvidePresenter
