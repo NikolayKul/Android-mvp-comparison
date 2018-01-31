@@ -17,12 +17,11 @@ So... to cut it short:
 
 ## Application
 
-Application consists of a single screen:
-- A couple of views
-- A loading progress bar
-- Error and success messages
+Application consists of a single login screen:
 
->TODO: project screenshots
+| ![Main](img/main.png)   | ![Loading](img/loading.png) |
+| :---------------------: | :-------------------------: |
+| ![Error](img/error.png) | ![Success](img/success.png) |
 
 ## Libraries
 
