@@ -3,4 +3,6 @@
     <string name="main_username_hint">Username</string>
     <string name="main_password_hint">Password</string>
     <string name="main_login_btn">Login</string>
+    <string name="main_message_success">Login success</string>
+    <string name="main_message_error">Login error</string>
 </resources>

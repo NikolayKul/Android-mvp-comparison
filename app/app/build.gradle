@@ -23,6 +23,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$project.version_kotlin"
     implementation "com.android.support:appcompat-v7:$project.version_support"
     implementation "jp.wasabeef:blurry:$project.version_blurry"
+    implementation "com.github.GrenderG:Toasty:$project.version_toasty"
 
     // rx
     implementation "io.reactivex.rxjava2:rxjava:$project.version_rx_java"

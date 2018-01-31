@@ -9,6 +9,7 @@ import android.widget.Toast
 import com.nikolaykul.android.mvp.comparison.R
 import com.nikolaykul.android.mvp.comparison.di.ActivityComponent
 import com.nikolaykul.android.mvp.comparison.presentation.base.BaseActivity
+import com.nikolaykul.android.mvp.comparison.utils.ToastUtils
 import com.nikolaykul.android.mvp.comparison.utils.hideKeyboard
 import com.nikolaykul.android.mvp.comparison.utils.textString
 import jp.wasabeef.blurry.Blurry
@@ -56,11 +57,11 @@ class MainActivity : BaseActivity<MainPresenter>(), MainMvpView {
     }
 
     override fun showLoginSuccess() {
-        showMessage("Login success")
+        ToastUtils.showSuccess(this, R.string.main_message_success, Toast.LENGTH_SHORT)
     }
 
     override fun showLoginError() {
-        showMessage("Error!")
+        ToastUtils.showError(this, R.string.main_message_error, Toast.LENGTH_SHORT)
     }
 
     private fun applyBlur() {
@@ -81,10 +82,6 @@ class MainActivity : BaseActivity<MainPresenter>(), MainMvpView {
         etUsername = findViewById(R.id.etUsername)
         etPassword = findViewById(R.id.etPassword)
         vgLoading = findViewById(R.id.vgLoading)
-    }
-
-    private fun showMessage(msg: String) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 
 }
