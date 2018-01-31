@@ -10,11 +10,11 @@ What do we expect from a perfect MVP library? Here're the most common __requirem
 
 So... to cut it short:
 
-| Library | Support screen rotations | Dagger friendly | Easy to customize |
-| :-----: | :----------------------: | :-------------: | :---------------: |
-| EasyMvp | no                       | yes             | yes               |
-| Moxy    | yes                      | somewhat        | yes               |
-| Mosby   | somewhat                 | yes             | no                |
+| Library                                           | Support screen rotations | Dagger friendly | Easy to customize |
+| :-----------------------------------------------: | :----------------------: | :-------------: | :---------------: |
+| [EasyMvp](https://github.com/6thsolution/EasyMVP) | no                       | yes             | yes               |
+| [Moxy](https://github.com/Arello-Mobile/Moxy)     | yes                      | somewhat        | yes               |
+| [Mosby](https://github.com/sockeqwe/mosby)        | somewhat                 | yes             | no                |
 
 ## Application
 
@@ -35,11 +35,11 @@ Application consists of a single login screen:
 
 Every branch represents a single library
 
->TODO: Mosby
+>TODO: [Mosby](https://github.com/sockeqwe/mosby)
 
->TODO: Moxy
+>TODO: [Moxy](https://github.com/Arello-Mobile/Moxy)
 
->TODO: EasyMvp
+>TODO: [EasyMvp](https://github.com/6thsolution/EasyMVP)
 
 >TODO: Other..
 
