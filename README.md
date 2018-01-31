@@ -19,9 +19,16 @@ So... to cut it short:
 
 Application consists of a single login screen:
 
-| ![Main](img/main.png)   | ![Loading](img/loading.png) |
-| :---------------------: | :-------------------------: |
-| ![Error](img/error.png) | ![Success](img/success.png) |
+<table>
+	<tr>
+	  <th><img src="img/main.png" width="270" height="480"></th>
+	  <th><img src="img/loading.png" width="270" height="480"></th>
+	</tr>
+	<tr>
+	  <th><img src="img/error.png" width="270" height="480"></th>
+	  <th><img src="img/success.png" width="270" height="480"></th>
+	</tr>
+</table>
 
 ## Libraries
 
