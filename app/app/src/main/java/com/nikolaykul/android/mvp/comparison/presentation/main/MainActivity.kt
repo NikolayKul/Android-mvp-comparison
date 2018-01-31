@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.arellomobile.mvp.presenter.InjectPresenter
+import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.nikolaykul.android.mvp.comparison.R
 import com.nikolaykul.android.mvp.comparison.di.ActivityComponent
 import com.nikolaykul.android.mvp.comparison.presentation.base.BaseActivity
@@ -19,12 +21,12 @@ import javax.inject.Inject
  * Created by nikolay
  */
 
-class MainActivity : BaseActivity<MainPresenter>(), MainMvpView {
+class MainActivity : BaseActivity(), MainMvpView {
 
-    // Otherwise you should explicitly define `MainPresenter`'s getter
-    // in `ApplicationComponent` or `ActivityComponent` (depending on presenter's scope)
-    // and call it in `createPresenter`
-    @Inject lateinit var injectedPresenter: MainPresenter
+    // see this issue for the details: `https://github.com/Arello-Mobile/Moxy/issues/100`
+    @Inject
+    @InjectPresenter
+    lateinit var presenter: MainPresenter
 
     // You probably would use a `DataBinding` or a `ButterKnife` or `Kotlin Android Extensions` for that
     private lateinit var btnLogin: Button
@@ -40,7 +42,8 @@ class MainActivity : BaseActivity<MainPresenter>(), MainMvpView {
         presenter.attachView(this)
     }
 
-    override fun createPresenter(): MainPresenter = injectedPresenter
+    @ProvidePresenter
+    fun createPresenter(): MainPresenter = presenter
 
     override fun injectSelf(component: ActivityComponent) {
         component.inject(this)

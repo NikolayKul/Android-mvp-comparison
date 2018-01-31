@@ -1,18 +1,9 @@
 package com.nikolaykul.android.mvp.comparison.presentation.base
 
+import com.arellomobile.mvp.MvpPresenter
+
 /**
  * Created by nikolay
  */
 
-abstract class BasePresenter<TView : BaseMvpView> {
-    protected var view: TView? = null
-
-    open fun attachView(view: TView) {
-        this.view = view
-    }
-
-    open fun detachView() {
-        view = null
-    }
-
-}
+abstract class BasePresenter<TView : BaseMvpView> : MvpPresenter<TView>()

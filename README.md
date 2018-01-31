@@ -1,7 +1,6 @@
 # Android MVP comparison
 
-In the world of Android there're a lot of different MVP frameworks and libraries.  
-This repo is aimed to help you to choose the right one.
+In the world of Android there're a lot of different MVP libraries. This repo is aimed to help you to choose the right one.
 
 What do we expect from a perfect MVP library? Here're the most common __requirements__:
 - It must handle screen rotations by itself
@@ -37,10 +36,10 @@ Every branch represents a single library
 
 ### [EasyMvp](https://github.com/6thsolution/EasyMVP)
 
-:heavy_plus_sign: Uses annotation processing (less inheritance)  
+:heavy_plus_sign: Uses annotation processing  
 :heavy_plus_sign: Keeps Presenter alive during configuration changes  
 :heavy_plus_sign: There's no entry barrier - a couple of classes and annotations is all you need  
-:heavy_minus_sign: Doesn't restore previous view state after configuration changes  
+:heavy_minus_sign: Doesn't restore previous state after configuration changes  
 
 Furthermore it has a few additional features like [RxApi](http://6thsolution.github.io/EasyMVP/rx-api-javadoc/), but they are not particularly useful. Btw there's a [bug](https://github.com/6thsolution/EasyMVP/issues/44) with the latest [Dagger](https://github.com/google/dagger) release.
 
