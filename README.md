@@ -1,19 +1,13 @@
 # Android MVP comparison
 
-In the world of Android there're a lot of different MVP frameworks and libraries. This repo is aimed to help you to choose the right one.
+There's a decent amount of different MVP frameworks and libraries for Android. This repo is aimed to help you to choose the one that suits your needs.
 
-What do we expect from a perfect MVP library? Here're the most common __requirements__:
-- It must handle screen rotations by itself
-- It must be easy to setup with a DI library ([Dagger](https://github.com/google/dagger) especially)
-- It must have a flexible API
+TL;DR;
 
-So... to cut it short:
-
-| Library                                           | Support screen rotations | Dagger friendly    | Flexible API  |
-| :-----------------------------------------------: | :----------------------: | :----------------: | :----------------: |
-| [EasyMvp](https://github.com/6thsolution/EasyMVP) | :x:                      | :white_check_mark: | :white_check_mark: |
-| [Moxy](https://github.com/Arello-Mobile/Moxy)     | :white_check_mark:       | somewhat           | :white_check_mark: |
-| [Mosby](https://github.com/sockeqwe/mosby)        | somewhat                 | :white_check_mark: | :x:                |
+| Library                                           | Support screen rotations | Keep Presenter alive | Can be applied to a custom View | [Dagger](https://github.com/google/dagger) friendly | Kotlin friendly    |
+| :-----------------------------------------------: | :----------------------: | :------------------: | :-----------------------------: | :-------------------------------------------------: | :----------------: |
+| [EasyMvp](https://github.com/6thsolution/EasyMVP) | :x:                      | :white_check_mark:   | :white_check_mark:              | :white_check_mark:                                  | :white_check_mark: |
+| [Moxy](https://github.com/Arello-Mobile/Moxy)     | :white_check_mark:       | :white_check_mark:   | :white_check_mark:              | somewhat                                            | :white_check_mark: |
 
 ## Application
 
@@ -36,25 +30,18 @@ Every branch represents a single library
 
 ### [EasyMvp](https://github.com/NikolayKul/Android-mvp-comparison/tree/easy_mvp)
 
-:heavy_plus_sign: Uses annotation processing  
-:heavy_plus_sign: Keeps Presenter alive during configuration changes  
-:heavy_plus_sign: No entry barrier  
-:heavy_plus_sign: Kotlin friendly  
-:heavy_plus_sign: Dagger friendly  
-:heavy_plus_sign: Can be applied to a custom View  
-:heavy_minus_sign: Doesn't restore previous view state after configuration changes  
+:small_blue_diamond: Uses annotation processing  
+:small_blue_diamond: The API consists of a few classes and annotations  
+:warning: Doesn't restore previous view state after configuration changes  
+:warning: There's a [bug](https://github.com/6thsolution/EasyMVP/issues/44) with the latest [Dagger](https://github.com/google/dagger) release   
 
-Furthermore it has a few additional features like [RxApi](http://6thsolution.github.io/EasyMVP/rx-api-javadoc/), but they are not particularly useful. Btw there's a [bug](https://github.com/6thsolution/EasyMVP/issues/44) with the latest [Dagger](https://github.com/google/dagger) release.
+Furthermore it has a few additional features like [RxApi](http://6thsolution.github.io/EasyMVP/rx-api-javadoc/), but they are not particularly useful.  
 
 ### [Moxy](https://github.com/NikolayKul/Android-mvp-comparison/tree/moxy)
 
-:heavy_plus_sign: Uses annotation processing  
-:heavy_plus_sign: Keeps Presenter alive during configuration changes  
-:heavy_plus_sign: No entry barrier  
-:heavy_plus_sign: Kotlin friendly  
-:heavy_plus_sign: Can be applied to a custom View  
-:heavy_plus_sign: Restore previous view state after configuration changes  
-:heavy_minus_sign: It's not that easy to [provide a Presenter](https://github.com/Arello-Mobile/Moxy/issues/100) using [Dagger](https://github.com/google/dagger)
+:small_blue_diamond: Uses annotation processing  
+:small_blue_diamond: Flexible API  
+:warning: It's not that easy to [provide a Presenter using Dagger](https://github.com/Arello-Mobile/Moxy/issues/100)
 
 The main feature is a `ViewState`. It's a stack of view commands (e.g. `showLoading`, `showError`) defined in the view interface. Moxy restores the previous view state by applying these commands from the stack depending on [StateStrategies](https://github.com/Arello-Mobile/Moxy/wiki/View-commands-state-strategy) (e.g. it can apply a command every phone rotation or only once)  
 
