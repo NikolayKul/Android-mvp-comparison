@@ -2,7 +2,7 @@
 
 There's a decent amount of different MVP frameworks and libraries for Android. This repo is aimed to help you to choose the one that suits your needs.
 
-TL;DR;
+TL;DR
 
 | Library                                           | Support screen rotations | Keep Presenter alive | Can be applied to a custom View | [Dagger](https://github.com/google/dagger) friendly | Kotlin friendly    |
 | :-----------------------------------------------: | :----------------------: | :------------------: | :-----------------------------: | :-------------------------------------------------: | :----------------: |
@@ -26,9 +26,9 @@ Application consists of a single login screen:
 
 ## Libraries
 
-Every branch represents a single library
+Every [branch](https://github.com/NikolayKul/Android-mvp-comparison/branches) represents a single library
 
-### [EasyMvp](https://github.com/NikolayKul/Android-mvp-comparison/tree/easy_mvp)
+### [EasyMvp](https://github.com/6thsolution/EasyMVP)
 
 :small_blue_diamond: Uses annotation processing  
 :small_blue_diamond: The API consists of a few classes and annotations  
@@ -37,7 +37,7 @@ Every branch represents a single library
 
 Furthermore it has a few additional features like [RxApi](http://6thsolution.github.io/EasyMVP/rx-api-javadoc/), but they are not particularly useful.  
 
-### [Moxy](https://github.com/NikolayKul/Android-mvp-comparison/tree/moxy)
+### [Moxy](https://github.com/Arello-Mobile/Moxy)
 
 :small_blue_diamond: Uses annotation processing  
 :small_blue_diamond: Flexible API  
