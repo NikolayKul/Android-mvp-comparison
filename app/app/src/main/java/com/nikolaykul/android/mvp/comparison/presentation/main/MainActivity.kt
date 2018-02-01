@@ -67,10 +67,14 @@ class MainActivity : BaseActivity(), MainMvpView {
     }
 
     private fun applyBlur() {
-        Blurry.with(this)
-                .sampling(2)
-                .capture(findViewById(R.id.root))
-                .into(findViewById(R.id.ivLoadingBackground))
+        findViewById<ViewGroup>(R.id.root).apply {
+            post {
+                Blurry.with(context)
+                        .sampling(2)
+                        .capture(this)
+                        .into(findViewById(R.id.ivLoadingBackground))
+            }
+        }
     }
 
     private fun initListeners() {
