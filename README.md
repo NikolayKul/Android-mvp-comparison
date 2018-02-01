@@ -34,7 +34,7 @@ Application consists of a single login screen:
 
 Every branch represents a single library
 
-### [EasyMvp](https://github.com/6thsolution/EasyMVP)
+### [EasyMvp](https://github.com/NikolayKul/Android-mvp-comparison/tree/easy_mvp)
 
 :heavy_plus_sign: Uses annotation processing  
 :heavy_plus_sign: Keeps Presenter alive during configuration changes  
@@ -46,7 +46,7 @@ Every branch represents a single library
 
 Furthermore it has a few additional features like [RxApi](http://6thsolution.github.io/EasyMVP/rx-api-javadoc/), but they are not particularly useful. Btw there's a [bug](https://github.com/6thsolution/EasyMVP/issues/44) with the latest [Dagger](https://github.com/google/dagger) release.
 
-### [Moxy](https://github.com/Arello-Mobile/Moxy)
+### [Moxy](https://github.com/NikolayKul/Android-mvp-comparison/tree/moxy)
 
 :heavy_plus_sign: Uses annotation processing  
 :heavy_plus_sign: Keeps Presenter alive during configuration changes  
@@ -56,7 +56,7 @@ Furthermore it has a few additional features like [RxApi](http://6thsolution.git
 :heavy_plus_sign: Restore previous view state after configuration changes  
 :heavy_minus_sign: It's not that easy to [provide a Presenter](https://github.com/Arello-Mobile/Moxy/issues/100) using [Dagger](https://github.com/google/dagger)
 
-The main feature is a `ViewState` - a stack of view commands (e.g. `showLoading`, `showError`) defined in the view interface. Moxy restores the previous view state by applying these commands from the stack depending on [StateStrategies](https://github.com/Arello-Mobile/Moxy/wiki/View-commands-state-strategy) (e.g. it can apply a command every phone rotation or only once)  
+The main feature is a `ViewState`. It's a stack of view commands (e.g. `showLoading`, `showError`) defined in the view interface. Moxy restores the previous view state by applying these commands from the stack depending on [StateStrategies](https://github.com/Arello-Mobile/Moxy/wiki/View-commands-state-strategy) (e.g. it can apply a command every phone rotation or only once)  
 
 ## TODO
 
